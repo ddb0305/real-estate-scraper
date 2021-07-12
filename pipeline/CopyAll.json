@@ -44,8 +44,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 2
+									"ordinal": 1
 								},
 								"sink": {
 									"name": "post_url",
@@ -54,8 +53,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 3
+									"ordinal": 2
 								},
 								"sink": {
 									"name": "value_hash",
@@ -64,8 +62,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 4
+									"ordinal": 3
 								},
 								"sink": {
 									"name": "price",
@@ -74,8 +71,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 5
+									"ordinal": 4
 								},
 								"sink": {
 									"name": "price_level",
@@ -84,8 +80,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 6
+									"ordinal": 5
 								},
 								"sink": {
 									"name": "area",
@@ -94,8 +89,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 7
+									"ordinal": 6
 								},
 								"sink": {
 									"name": "area_level",
@@ -104,8 +98,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 8
+									"ordinal": 7
 								},
 								"sink": {
 									"name": "rooms",
@@ -114,8 +107,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 9
+									"ordinal": 8
 								},
 								"sink": {
 									"name": "toilets",
@@ -124,8 +116,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 10
+									"ordinal": 9
 								},
 								"sink": {
 									"name": "direction",
@@ -134,8 +125,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 11
+									"ordinal": 10
 								},
 								"sink": {
 									"name": "type",
@@ -144,8 +134,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 12
+									"ordinal": 11
 								},
 								"sink": {
 									"name": "cate",
@@ -154,8 +143,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 13
+									"ordinal": 12
 								},
 								"sink": {
 									"name": "city",
@@ -164,8 +152,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 14
+									"ordinal": 13
 								},
 								"sink": {
 									"name": "distr",
@@ -174,8 +161,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 15
+									"ordinal": 14
 								},
 								"sink": {
 									"name": "ward_id",
@@ -184,8 +170,7 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 16
+									"ordinal": 15
 								},
 								"sink": {
 									"name": "street_id",
@@ -194,14 +179,14 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 17
+									"ordinal": 16
 								},
 								"sink": {
 									"name": "project_id",
 									"type": "Int32"
 								}
-							}
+							},
+							null
 						]
 					}
 				},
