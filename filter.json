@@ -1,0 +1,66 @@
+{
+	"muc_gia":[
+		{"id":"-1", "code":"Tất cả"},
+		{"id":"0", "code":"Thỏa thuận"},
+		{"id":"1", "code":"< 500 triệu"},
+		{"id":"2", "code":"500 - 800 triệu"},
+		{"id":"3", "code":"800 triệu - 1 tỷ"},
+		{"id":"4", "code":"1 - 2 tỷ"},
+		{"id":"5", "code":"2 - 3 tỷ"},
+		{"id":"6", "code":"3 - 5 tỷ"},
+		{"id":"7", "code":"5 - 7 tỷ"},
+		{"id":"8", "code":"7 - 10 tỷ"},
+		{"id":"9", "code":"10 - 20 tỷ"},
+		{"id":"10", "code":"20 - 30 tỷ"},
+		{"id":"11", "code":"> 30 tỷ"}
+	],
+	"loai_dien_tich":[
+		{"id":"-1","code":"Tất cả"},
+		{"id":"0","code":"Không rõ"},
+		{"id":"1","code":"0 - 30 m²"},
+		{"id":"2","code":"30 m² - 50 m²"},
+		{"id":"3","code":"50 m² - 80 m²"},
+		{"id":"4","code":"80 m² - 100 m²"},
+		{"id":"5","code":"100 m² - 150 m²"},
+		{"id":"6","code":"150 m² - 200 m²"},
+		{"id":"7","code":"200 m² - 250 m²"},
+		{"id":"8","code":"250 m² - 300 m²"},
+		{"id":"9","code":"300 m² - 500 m²"},
+		{"id":"10","code":">= 500 m²"}
+	],
+	"so_phong_ngu":[
+		{"id":"-1", "code":"Tất cả"},
+		{"id":"1", "code":"1+"},
+		{"id":"2", "code":"2+"},
+		{"id":"3", "code":"3+"},
+		{"id":"4", "code":"4+"}
+	],
+	"huong_nha":[
+		{"id":"-1", "code":"Tất cả hướng nhà"},
+		{"id":"0", "code":"Không rõ"},
+		{"id":"1", "code":"Đông"},
+		{"id":"2", "code":"Tây"},
+		{"id":"3", "code":"Nam"},
+		{"id":"4", "code":"Bắc"},
+		{"id":"5", "code":"Đông-Bắc"},
+		{"id":"6", "code":"Tây-Bắc"},
+		{"id":"7", "code":"Tây-Nam"},
+		{"id":"8", "code":"Đông-Nam"}
+	],
+	"loai_nha_dat":[
+		{"id":"0", "code":"Tất cả nhà đất"},
+		{"id":"324", "code":"Căn hộ chung cư"},
+		{"id":"41", "code":"Nhà riêng"},
+		{"id":"325", "code":"Nhà biệt thự, liền kề"},
+		{"id":"163", "code":"Nhà mặt phố"},
+		{"id":"40", "code":"Đất nền dự án"},
+		{"id":"283", "code":"Bán đất"},
+		{"id":"44", "code":"Trang trại, khu nghỉ dưỡng"},
+		{"id":"45", "code":"Kho, nhà xưởng"},
+		{"id":"48", "code":"Bất động sản khác"}
+	],
+	"loai_tin_rao":[
+		{"id":"38", "code":"Nhà đất bán"},
+		{"id":"49", "code":"Nhà đất cho thuê"}
+	]
+}

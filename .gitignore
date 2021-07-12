@@ -1,0 +1,5 @@
+__pycache__/
+.ipynb_checkpoints/
+bds-raw-datas/
+azure_key.py
+test.ipynb
