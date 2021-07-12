@@ -1,0 +1,116 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "pr_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "post_url",
+				"type": "char"
+			},
+			{
+				"name": "value_hash",
+				"type": "char"
+			},
+			{
+				"name": "price",
+				"type": "bigint",
+				"precision": 19
+			},
+			{
+				"name": "price_level",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "area",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "area_level",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "rooms",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "toilets",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "direction",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "type",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "category",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "city",
+				"type": "char"
+			},
+			{
+				"name": "district",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ward",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "street",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "project",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "is_valid",
+				"type": "bit"
+			},
+			{
+				"name": "valid_from",
+				"type": "date"
+			},
+			{
+				"name": "valid_to",
+				"type": "date"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "bds_data"
+		}
+	}
+}

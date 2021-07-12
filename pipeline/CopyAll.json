@@ -103,8 +103,8 @@
 								},
 								"sink": {
 									"name": "area",
-									"type": "Int32",
-									"physicalType": "int"
+									"type": "Double",
+									"physicalType": "float"
 								}
 							},
 							{
