@@ -37,6 +37,6 @@ if __name__ == "__main__":
 
     r = Routine(test_wards)
     loop = asyncio.get_event_loop()
-    future = asyncio.ensure_future(r.crawl_all(r.WEEKLY))   
+    future = asyncio.ensure_future(r.crawl_all(r.DAILY))   
     loop.run_until_complete(future)    
     

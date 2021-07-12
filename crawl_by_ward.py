@@ -194,7 +194,7 @@ class WC():
                                                 data["cate"], data["city"], data["distr"], 
                                                 data["wardid"], data["streetid"], 
                                                 data["projid"])).encode("utf-8")).hexdigest(),
-                        data["priceSort"], 
+                        str(int(data["priceSort"]) / 1000000000), 
                         data["priceLevel"], 
                         data["areaSort"], 
                         data["areaLevel"], 
