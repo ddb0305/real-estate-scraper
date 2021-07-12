@@ -56,7 +56,7 @@
 								"sink": {
 									"name": "post_url",
 									"type": "String",
-									"physicalType": "char"
+									"physicalType": "varchar"
 								}
 							},
 							{
@@ -68,7 +68,7 @@
 								"sink": {
 									"name": "value_hash",
 									"type": "String",
-									"physicalType": "char"
+									"physicalType": "varchar"
 								}
 							},
 							{
