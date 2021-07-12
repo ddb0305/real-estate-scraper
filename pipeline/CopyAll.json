@@ -28,9 +28,6 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"sink": {
-						"type": "AzureSqlSink"
-					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
@@ -211,12 +208,6 @@
 				"inputs": [
 					{
 						"referenceName": "Source_From_Datalake",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				]
