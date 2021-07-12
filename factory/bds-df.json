@@ -1,0 +1,9 @@
+{
+	"name": "bds-df",
+	"location": "eastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f437c4e6-1a82-4c6c-b242-acc07ff96fd2",
+		"tenantId": "c3a1ae87-743c-48db-9dd0-496df4e12410"
+	}
+}
