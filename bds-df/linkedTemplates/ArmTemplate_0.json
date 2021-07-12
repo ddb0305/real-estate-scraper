@@ -96,8 +96,8 @@
 					},
 					{
 						"name": "area",
-						"type": "int",
-						"precision": 10
+						"type": "float",
+						"precision": 15
 					},
 					{
 						"name": "area_level",
@@ -331,7 +331,7 @@
 										"sink": {
 											"name": "post_url",
 											"type": "String",
-											"physicalType": "char"
+											"physicalType": "varchar"
 										}
 									},
 									{
@@ -343,7 +343,7 @@
 										"sink": {
 											"name": "value_hash",
 											"type": "String",
-											"physicalType": "char"
+											"physicalType": "varchar"
 										}
 									},
 									{
@@ -378,8 +378,8 @@
 										},
 										"sink": {
 											"name": "area",
-											"type": "Int32",
-											"physicalType": "int"
+											"type": "Double",
+											"physicalType": "float"
 										}
 									},
 									{
