@@ -28,6 +28,9 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
@@ -44,7 +47,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 1
+									"type": "String",
+									"ordinal": 2
 								},
 								"sink": {
 									"name": "post_url",
@@ -53,7 +57,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 2
+									"type": "String",
+									"ordinal": 3
 								},
 								"sink": {
 									"name": "value_hash",
@@ -62,7 +67,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 3
+									"type": "String",
+									"ordinal": 4
 								},
 								"sink": {
 									"name": "price",
@@ -71,7 +77,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 4
+									"type": "String",
+									"ordinal": 5
 								},
 								"sink": {
 									"name": "price_level",
@@ -80,7 +87,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 5
+									"type": "String",
+									"ordinal": 6
 								},
 								"sink": {
 									"name": "area",
@@ -89,7 +97,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 6
+									"type": "String",
+									"ordinal": 7
 								},
 								"sink": {
 									"name": "area_level",
@@ -98,7 +107,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 7
+									"type": "String",
+									"ordinal": 8
 								},
 								"sink": {
 									"name": "rooms",
@@ -107,7 +117,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 8
+									"type": "String",
+									"ordinal": 9
 								},
 								"sink": {
 									"name": "toilets",
@@ -116,7 +127,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 9
+									"type": "String",
+									"ordinal": 10
 								},
 								"sink": {
 									"name": "direction",
@@ -125,7 +137,8 @@
 							},
 							{
 								"source": {
-									"ordinal": 10
+									"type": "String",
+									"ordinal": 11
 								},
 								"sink": {
 									"name": "type",
@@ -134,16 +147,18 @@
 							},
 							{
 								"source": {
-									"ordinal": 11
+									"type": "String",
+									"ordinal": 12
 								},
 								"sink": {
-									"name": "cate",
+									"name": "category",
 									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"ordinal": 12
+									"type": "String",
+									"ordinal": 13
 								},
 								"sink": {
 									"name": "city",
@@ -152,47 +167,56 @@
 							},
 							{
 								"source": {
-									"ordinal": 13
-								},
-								"sink": {
-									"name": "distr",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
+									"type": "String",
 									"ordinal": 14
 								},
 								"sink": {
-									"name": "ward_id",
+									"name": "district",
 									"type": "Int32"
 								}
 							},
 							{
 								"source": {
+									"type": "String",
 									"ordinal": 15
 								},
 								"sink": {
-									"name": "street_id",
+									"name": "ward",
 									"type": "Int32"
 								}
 							},
 							{
 								"source": {
+									"type": "String",
 									"ordinal": 16
 								},
 								"sink": {
-									"name": "project_id",
+									"name": "street",
 									"type": "Int32"
 								}
 							},
-							null
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 17
+								},
+								"sink": {
+									"name": "project",
+									"type": "Int32"
+								}
+							}
 						]
 					}
 				},
 				"inputs": [
 					{
 						"referenceName": "Source_From_Datalake",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				]
