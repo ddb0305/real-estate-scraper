@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "bdsDatasetsCSV",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"folderPath": "all/2021-7-9",
 				"fileSystem": "bds-raw-datas"
 			},
 			"columnDelimiter": ",",
