@@ -44,7 +44,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
 							"quoteAllText": true,
-							"fileExtension": ".csv"
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false,
@@ -282,7 +282,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "CopyOutput",
+						"referenceName": "CopyOuput",
 						"type": "DatasetReference"
 					}
 				]
