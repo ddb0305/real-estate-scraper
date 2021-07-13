@@ -72,7 +72,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
 									"quoteAllText": true,
-									"fileExtension": ".txt"
+									"fileExtension": ".csv"
 								}
 							},
 							"enableStaging": false,
@@ -94,7 +94,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "copyOutput",
+								"referenceName": "DelimitedText1",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -105,7 +105,34 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/bdsAllData')]",
-				"[concat(variables('factoryId'), '/datasets/copyOutput')]"
+				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
 			]
 		},
 		{
@@ -203,160 +230,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/copyOutput')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileSystem": "output"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/sinkDatabase')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "id",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "trigger_time",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "pr_id",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "post_url",
-						"type": "varchar"
-					},
-					{
-						"name": "value_hash",
-						"type": "varchar"
-					},
-					{
-						"name": "price",
-						"type": "bigint",
-						"precision": 19
-					},
-					{
-						"name": "price_level",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "area",
-						"type": "float",
-						"precision": 15
-					},
-					{
-						"name": "area_level",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "rooms",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "toilets",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "direction",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "type",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "category",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "city",
-						"type": "varchar"
-					},
-					{
-						"name": "district",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ward",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "street",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "project",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "is_valid",
-						"type": "bit"
-					},
-					{
-						"name": "valid_from",
-						"type": "date"
-					},
-					{
-						"name": "valid_to",
-						"type": "date"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "bds_data"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"
 			]
 		},
 		{
