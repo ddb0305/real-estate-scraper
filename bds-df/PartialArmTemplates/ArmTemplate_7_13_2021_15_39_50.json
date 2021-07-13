@@ -6,18 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "bds-df"
-		},
-		"AzureDataLakeStorage1_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
-		},
-		"AzureSqlDatabase1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://bdsstrorageaccount.dfs.core.windows.net"
 		}
 	},
 	"variables": {
@@ -305,15 +293,13 @@
 						"inputs": [
 							{
 								"referenceName": "bds_file_system",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "output_file_system",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					},
@@ -339,14 +325,8 @@
 						"typeProperties": {
 							"dataflow": {
 								"referenceName": "Clean and Sink All data",
-								"type": "DataFlowReference",
-								"parameters": {},
-								"datasetParameters": {
-									"outputDataset": {},
-									"sinkToDB": {}
-								}
+								"type": "DataFlowReference"
 							},
-							"staging": {},
 							"compute": {
 								"coreCount": 8,
 								"computeType": "General"
@@ -460,136 +440,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/bds_db')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "id",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "trigger_time",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "pr_id",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "post_url",
-						"type": "varchar"
-					},
-					{
-						"name": "value_hash",
-						"type": "varchar"
-					},
-					{
-						"name": "price",
-						"type": "bigint",
-						"precision": 19
-					},
-					{
-						"name": "price_level",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "area",
-						"type": "float",
-						"precision": 15
-					},
-					{
-						"name": "area_level",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "rooms",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "toilets",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "direction",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "type",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "category",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "city",
-						"type": "varchar"
-					},
-					{
-						"name": "district",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "ward",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "street",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "project",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "is_valid",
-						"type": "bit"
-					},
-					{
-						"name": "valid_from",
-						"type": "date"
-					},
-					{
-						"name": "valid_to",
-						"type": "date"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "bds_data"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/bds_file_system')]",
@@ -684,9 +535,7 @@
 					}
 				]
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/output_file_system')]",
@@ -710,38 +559,6 @@
 					"quoteChar": "\""
 				},
 				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureSqlDatabase1_connectionString')]"
-				}
 			},
 			"dependsOn": []
 		},
@@ -779,8 +596,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/2017_7_13_dataset')]",
-				"[concat(variables('factoryId'), '/datasets/bds_db')]"
+				"[concat(variables('factoryId'), '/datasets/2017_7_13_dataset')]"
 			]
 		}
 	]

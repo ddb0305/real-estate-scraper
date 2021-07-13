@@ -55,34 +55,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyOuput')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileSystem": "output"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DelimitedText1')]",
+			"name": "[concat(parameters('factoryName'), '/2017_7_13_dataset')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -174,103 +147,6 @@
 					},
 					{
 						"name": "triggered_time",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/bdsAllData')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureDataLakeStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": "all",
-						"fileSystem": "bds-raw-datas"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "pr_id",
-						"type": "String"
-					},
-					{
-						"name": "url",
-						"type": "String"
-					},
-					{
-						"name": "value_hash",
-						"type": "String"
-					},
-					{
-						"name": "price",
-						"type": "String"
-					},
-					{
-						"name": "price_level",
-						"type": "String"
-					},
-					{
-						"name": "area",
-						"type": "String"
-					},
-					{
-						"name": "area_level",
-						"type": "String"
-					},
-					{
-						"name": "rooms",
-						"type": "String"
-					},
-					{
-						"name": "toilets",
-						"type": "String"
-					},
-					{
-						"name": "direction",
-						"type": "String"
-					},
-					{
-						"name": "type",
-						"type": "String"
-					},
-					{
-						"name": "cate",
-						"type": "String"
-					},
-					{
-						"name": "city",
-						"type": "String"
-					},
-					{
-						"name": "distr",
-						"type": "String"
-					},
-					{
-						"name": "ward_id",
-						"type": "String"
-					},
-					{
-						"name": "street_id",
-						"type": "String"
-					},
-					{
-						"name": "proj_id",
 						"type": "String"
 					}
 				]
@@ -407,7 +283,131 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/dataflow1')]",
+			"name": "[concat(parameters('factoryName'), '/bds_file_system')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "all",
+						"fileSystem": "bds-raw-datas"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "pr_id",
+						"type": "String"
+					},
+					{
+						"name": "url",
+						"type": "String"
+					},
+					{
+						"name": "value_hash",
+						"type": "String"
+					},
+					{
+						"name": "price",
+						"type": "String"
+					},
+					{
+						"name": "price_level",
+						"type": "String"
+					},
+					{
+						"name": "area",
+						"type": "String"
+					},
+					{
+						"name": "area_level",
+						"type": "String"
+					},
+					{
+						"name": "rooms",
+						"type": "String"
+					},
+					{
+						"name": "toilets",
+						"type": "String"
+					},
+					{
+						"name": "direction",
+						"type": "String"
+					},
+					{
+						"name": "type",
+						"type": "String"
+					},
+					{
+						"name": "cate",
+						"type": "String"
+					},
+					{
+						"name": "city",
+						"type": "String"
+					},
+					{
+						"name": "distr",
+						"type": "String"
+					},
+					{
+						"name": "ward_id",
+						"type": "String"
+					},
+					{
+						"name": "street_id",
+						"type": "String"
+					},
+					{
+						"name": "proj_id",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/output_file_system')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "output"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Clean and Sink All data')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -416,10 +416,10 @@
 					"sources": [
 						{
 							"dataset": {
-								"referenceName": "DelimitedText1",
+								"referenceName": "2017_7_13_dataset",
 								"type": "DatasetReference"
 							},
-							"name": "source1"
+							"name": "outputDataset"
 						}
 					],
 					"sinks": [
@@ -428,19 +428,19 @@
 								"referenceName": "bds_db",
 								"type": "DatasetReference"
 							},
-							"name": "sink1"
+							"name": "sinkToDB"
 						}
 					],
 					"transformations": [
 						{
-							"name": "DerivedColumn1"
+							"name": "changeDateDatatype"
 						}
 					],
-					"script": "source(output(\n\t\tpr_id as integer,\n\t\turl as string,\n\t\tvalue_hash as string,\n\t\tprice as float,\n\t\tprice_level as integer,\n\t\tarea as float,\n\t\tarea_level as integer,\n\t\trooms as integer,\n\t\ttoilets as integer,\n\t\tdirection as integer,\n\t\ttype as integer,\n\t\tcate as integer,\n\t\tcity as string,\n\t\tdistr as integer,\n\t\tward_id as integer,\n\t\tstreet_id as integer,\n\t\tproj_id as integer,\n\t\ttriggered_time as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpurgeFiles: true) ~> source1\nsource1 derive(triggered_time = toTimestamp(triggered_time, 'MM/dd/yyyy HH:mm:ss')) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tid as integer,\n\t\ttrigger_time as timestamp,\n\t\tpr_id as integer,\n\t\tpost_url as string,\n\t\tvalue_hash as string,\n\t\tprice as long,\n\t\tprice_level as integer,\n\t\tarea as double,\n\t\tarea_level as integer,\n\t\trooms as integer,\n\t\ttoilets as integer,\n\t\tdirection as integer,\n\t\ttype as integer,\n\t\tcategory as integer,\n\t\tcity as string,\n\t\tdistrict as integer,\n\t\tward as integer,\n\t\tstreet as integer,\n\t\tproject as integer,\n\t\tis_valid as boolean,\n\t\tvalid_from as date,\n\t\tvalid_to as date\n\t),\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\ttruncate:true,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\ttrigger_time = triggered_time,\n\t\tpr_id,\n\t\tpost_url = url,\n\t\tvalue_hash,\n\t\tprice,\n\t\tprice_level,\n\t\tarea,\n\t\tarea_level,\n\t\trooms,\n\t\ttoilets,\n\t\tdirection,\n\t\ttype,\n\t\tcategory = cate,\n\t\tcity,\n\t\tdistrict = distr,\n\t\tward = ward_id,\n\t\tstreet = street_id,\n\t\tproject = proj_id\n\t)) ~> sink1"
+					"script": "source(output(\n\t\tpr_id as integer,\n\t\turl as string,\n\t\tvalue_hash as string,\n\t\tprice as float,\n\t\tprice_level as integer,\n\t\tarea as float,\n\t\tarea_level as integer,\n\t\trooms as integer,\n\t\ttoilets as integer,\n\t\tdirection as integer,\n\t\ttype as integer,\n\t\tcate as integer,\n\t\tcity as string,\n\t\tdistr as integer,\n\t\tward_id as integer,\n\t\tstreet_id as integer,\n\t\tproj_id as integer,\n\t\ttriggered_time as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpurgeFiles: true) ~> outputDataset\noutputDataset derive(triggered_time = toTimestamp(triggered_time, 'MM/dd/yyyy HH:mm:ss')) ~> changeDateDatatype\nchangeDateDatatype sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tinput(\n\t\tid as integer,\n\t\ttrigger_time as timestamp,\n\t\tpr_id as integer,\n\t\tpost_url as string,\n\t\tvalue_hash as string,\n\t\tprice as long,\n\t\tprice_level as integer,\n\t\tarea as double,\n\t\tarea_level as integer,\n\t\trooms as integer,\n\t\ttoilets as integer,\n\t\tdirection as integer,\n\t\ttype as integer,\n\t\tcategory as integer,\n\t\tcity as string,\n\t\tdistrict as integer,\n\t\tward as integer,\n\t\tstreet as integer,\n\t\tproject as integer,\n\t\tis_valid as boolean,\n\t\tvalid_from as date,\n\t\tvalid_to as date\n\t),\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\ttruncate:true,\n\tformat: 'table',\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\terrorHandlingOption: 'stopOnFirstError',\n\tmapColumn(\n\t\ttrigger_time = triggered_time,\n\t\tpr_id,\n\t\tpost_url = url,\n\t\tvalue_hash,\n\t\tprice,\n\t\tprice_level,\n\t\tarea,\n\t\tarea_level,\n\t\trooms,\n\t\ttoilets,\n\t\tdirection,\n\t\ttype,\n\t\tcategory = cate,\n\t\tcity,\n\t\tdistrict = distr,\n\t\tward = ward_id,\n\t\tstreet = street_id,\n\t\tproject = proj_id\n\t)) ~> sinkToDB"
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]",
+				"[concat(variables('factoryId'), '/datasets/2017_7_13_dataset')]",
 				"[concat(variables('factoryId'), '/datasets/bds_db')]"
 			]
 		},
@@ -724,14 +724,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "bdsAllData",
+								"referenceName": "bds_file_system",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "CopyOuput",
+								"referenceName": "output_file_system",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -758,12 +758,12 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataflow": {
-								"referenceName": "dataflow1",
+								"referenceName": "Clean and Sink All data",
 								"type": "DataFlowReference",
 								"parameters": {},
 								"datasetParameters": {
-									"source1": {},
-									"sink1": {}
+									"outputDataset": {},
+									"sinkToDB": {}
 								}
 							},
 							"staging": {},
@@ -778,9 +778,9 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/bdsAllData')]",
-				"[concat(variables('factoryId'), '/datasets/CopyOuput')]",
-				"[concat(variables('factoryId'), '/dataflows/dataflow1')]"
+				"[concat(variables('factoryId'), '/datasets/bds_file_system')]",
+				"[concat(variables('factoryId'), '/datasets/output_file_system')]",
+				"[concat(variables('factoryId'), '/dataflows/Clean and Sink All data')]"
 			]
 		}
 	]
