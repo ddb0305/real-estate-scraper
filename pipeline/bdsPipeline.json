@@ -50,6 +50,223 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "pr_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "pr_id",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "url",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "url",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "value_hash",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "value_hash",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "price",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "price",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "price_level",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "price_level",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "area",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "area",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "area_level",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "area_level",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "rooms",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "rooms",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "toilets",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "toilets",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "direction",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "direction",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "type",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "cate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cate",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "city",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "city",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "distr",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "distr",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ward_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ward_id",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "street_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "street_id",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "proj_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "proj_id",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "triggered_time",
+									"type": "String"
+								},
+								"sink": {
+									"name": "triggered_time",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -65,7 +282,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "CopyOutput",
 						"type": "DatasetReference"
 					}
 				]
