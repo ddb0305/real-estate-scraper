@@ -72,7 +72,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
 									"quoteAllText": true,
-									"fileExtension": ".csv"
+									"fileExtension": ".txt"
 								}
 							},
 							"enableStaging": false,
@@ -311,7 +311,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "CopyOutput",
+								"referenceName": "CopyOuput",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -322,11 +322,11 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/bdsAllData')]",
-				"[concat(variables('factoryId'), '/datasets/CopyOutput')]"
+				"[concat(variables('factoryId'), '/datasets/CopyOuput')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/CopyOutput')]",
+			"name": "[concat(parameters('factoryName'), '/CopyOuput')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -338,83 +338,15 @@
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
-						"type": "AzureBlobFSLocation"
+						"type": "AzureBlobFSLocation",
+						"fileSystem": "output"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
-				"schema": [
-					{
-						"name": "pr_id",
-						"type": "String"
-					},
-					{
-						"name": "url",
-						"type": "String"
-					},
-					{
-						"name": "value_hash",
-						"type": "String"
-					},
-					{
-						"name": "price",
-						"type": "String"
-					},
-					{
-						"name": "price_level",
-						"type": "String"
-					},
-					{
-						"name": "area",
-						"type": "String"
-					},
-					{
-						"name": "area_level",
-						"type": "String"
-					},
-					{
-						"name": "rooms",
-						"type": "String"
-					},
-					{
-						"name": "toilets",
-						"type": "String"
-					},
-					{
-						"name": "direction",
-						"type": "String"
-					},
-					{
-						"name": "type",
-						"type": "String"
-					},
-					{
-						"name": "cate",
-						"type": "String"
-					},
-					{
-						"name": "city",
-						"type": "String"
-					},
-					{
-						"name": "distr",
-						"type": "String"
-					},
-					{
-						"name": "ward_id",
-						"type": "String"
-					},
-					{
-						"name": "street_id",
-						"type": "String"
-					},
-					{
-						"name": "proj_id",
-						"type": "String"
-					}
-				]
+				"schema": []
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
