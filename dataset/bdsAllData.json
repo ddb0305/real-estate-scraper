@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "all",
+				"folderPath": "all/2021-7-12",
 				"fileSystem": "bds-raw-datas"
 			},
 			"columnDelimiter": ",",
