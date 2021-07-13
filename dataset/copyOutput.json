@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "2021-7-12",
 				"fileSystem": "output"
 			},
 			"columnDelimiter": ",",
