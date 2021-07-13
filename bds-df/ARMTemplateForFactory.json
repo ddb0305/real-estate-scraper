@@ -25,13 +25,13 @@
 	},
 	"resources": [
 		{
-			"name": "[concat(parameters('factoryName'), '/bdsPipeline')]",
+			"name": "[concat(parameters('factoryName'), '/Copy All')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"activities": [
 					{
-						"name": "CopyAll",
+						"name": "Adding TriggerTime column",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -318,11 +318,11 @@
 						]
 					},
 					{
-						"name": "Data flow1",
+						"name": "Cleaning Input Data and Sink",
 						"type": "ExecuteDataFlow",
 						"dependsOn": [
 							{
-								"activity": "CopyAll",
+								"activity": "Adding TriggerTime column",
 								"dependencyConditions": [
 									"Succeeded"
 								]
