@@ -1,5 +1,5 @@
 {
-	"name": "bdsAllData",
+	"name": "bds_file_system",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",

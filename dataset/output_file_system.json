@@ -1,5 +1,5 @@
 {
-	"name": "CopyOuput",
+	"name": "output_file_system",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",

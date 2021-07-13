@@ -276,13 +276,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "bdsAllData",
+						"referenceName": "bds_file_system",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "CopyOuput",
+						"referenceName": "output_file_system",
 						"type": "DatasetReference"
 					}
 				]
@@ -308,7 +308,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dataflow1",
+						"referenceName": "Clean and Sink All data",
 						"type": "DataFlowReference"
 					},
 					"compute": {
